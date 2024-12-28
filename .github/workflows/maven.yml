@@ -32,10 +32,11 @@ jobs:
       uses: browser-actions/setup-chrome@latest 
       with: 
         chrome-version: 'latest'
+        install-chromedriver: true
         install-dependencies: true
         
     - name: Runs Selenuim Test
-      run: mvn clean test -Dbrowser.binary=/usr/bin/google-chrome
+      run: mvn clean test
       
     - name: Test Report
       uses: dorny/test-reporter@v1.9.1
