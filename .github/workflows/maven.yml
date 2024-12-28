@@ -38,13 +38,20 @@ jobs:
     - name: Runs Selenuim Test
       run: mvn clean test -Dheadless=true
       
-    - name: Test Report
-      uses: dorny/test-reporter@v1.9.1
-      if: success()           # run this step even if previous step failed
-      with:
-        name: Selenuim Tests            # Name of the check run which will be created
-        path: target/surefire-reports/TEST-*.xml    # Path to test results
-        reporter: java-junit        # Format of test results
+    - name: Archive test results 
+      uses: actions/upload-artifact@v4 
+      with: 
+        name: test-results 
+        path: target/surefire-reports/*.xml 
+        if: success() || failure()
+
+    - name: Publish Test Report 
+      uses: dorny/test-reporter@v1 
+      if: success() || failure() 
+      with: 
+        name: JUnit Tests 
+        path: target/surefire-reports/*.xml 
+        reporter: junit
           
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
