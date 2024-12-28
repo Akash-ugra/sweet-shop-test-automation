@@ -1,4 +1,3 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -41,7 +40,6 @@ public class AppTest {
      */
     @BeforeAll
     public static void setUp() {
-        WebDriverManager.chromedriver().setup();
         // Set the path for the WebDriver executable
         ChromeOptions options = new ChromeOptions().addArguments(List.of("--no-sandbox", "--disable-dev-shm-usage"));
         if (Boolean.getBoolean("headless")) {

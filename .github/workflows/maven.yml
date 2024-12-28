@@ -36,7 +36,7 @@ jobs:
         install-dependencies: true
         
     - name: Runs Selenuim Test
-      run: mvn clean test -Dheadless=true
+      run: mvn clean test -Dwebdriver.chrome.driver=$CHROMEDRIVER_BIN -Dheadless=true
       
     - name: Archive test results 
       uses: actions/upload-artifact@v4 
