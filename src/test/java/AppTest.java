@@ -4,6 +4,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 import java.time.Duration;
 
@@ -18,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class AppTest {
     private static WebDriver driver;
     private static WebDriverWait wait;
+    private static WebDriverManager webDriverManager;
 
     /**
      * Set up the test environment by instantiating a WebDriver instance.
@@ -39,6 +41,7 @@ public class AppTest {
      */
     @BeforeAll
     public static void setUp() {
+        webDriverManager.chromedriver().setup();
         // Set the path for the WebDriver executable
         driver = new ChromeDriver();
         driver.manage().window().setSize(new Dimension(1366, 720));
