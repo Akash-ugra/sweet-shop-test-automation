@@ -27,8 +27,16 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+        
+    - name: Set up Chrome 
+      uses: browser-actions/setup-chrome@latest 
+      with: 
+        chrome-version: 'latest' 
+        install-chromedriver: true
+        
     - name: Runs Selenuim Test
       run: mvn clean test
+      
     - name: Test Report
       uses: dorny/test-reporter@v1.9.1
       if: success()           # run this step even if previous step failed
