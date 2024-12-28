@@ -32,6 +32,7 @@ jobs:
       uses: browser-actions/setup-chrome@latest 
       with: 
         chrome-version: 'latest'
+        install-dependencies: true
         
     - name: Runs Selenuim Test
       run: mvn clean test -Dbrowser.binary=/usr/bin/google-chrome
