@@ -34,7 +34,7 @@ jobs:
         chrome-version: 'latest'
         
     - name: Runs Selenuim Test
-      run: mvn clean test
+      run: mvn clean test -Dbrowser.binary=/usr/bin/google-chrome
       
     - name: Test Report
       uses: dorny/test-reporter@v1.9.1
