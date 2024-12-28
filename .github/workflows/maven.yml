@@ -32,10 +32,9 @@ jobs:
       uses: browser-actions/setup-chrome@latest 
       with: 
         chrome-version: 'latest'
-        install-chromedriver: true
         
     - name: Runs Selenuim Test
-      run: sudo mvn clean test -Dwebdriver.chrome.driver=$CHROMEDRIVER_BIN
+      run: sudo mvn clean test
       
     - name: Test Report
       uses: dorny/test-reporter@v1.9.1
