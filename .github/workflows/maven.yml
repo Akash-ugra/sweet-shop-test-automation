@@ -43,7 +43,7 @@ jobs:
       if: success()           # run this step even if previous step failed
       with:
         name: Selenuim Tests            # Name of the check run which will be created
-        path: surefire-reports/TEST-*.xml    # Path to test results
+        path: target/surefire-reports/TEST-*.xml    # Path to test results
         reporter: java-junit        # Format of test results
           
 
