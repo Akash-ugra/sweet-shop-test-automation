@@ -33,13 +33,7 @@ sweet-shop-test-automation
    - Ensure that you have Maven installed on your machine. 
    - You can download it from [Maven's official website](https://maven.apache.org/download.cgi).
 
-4. **Download and configure Chrome driver**
-   - Download Chrome drive from: [Chrome driver](https://storage.googleapis.com/chrome-for-testing-public/131.0.6778.204/win64/chromedriver-win64.zip).
-   - Unzip it and place the exe at location: D:\chromedriver-win64\chromedriver.exe.
-   OR
-   - Update the chromedriver.exe path at https://github.com/Akash-ugra/sweet-shop-test-automation/blob/main/src/test/java/AppTest.java#L43
-
-5. **Build the project:**
+4. **Build the project:**
    Run the following command to build the project and download the necessary dependencies:
    ```
    mvn clean install
