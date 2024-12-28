@@ -43,7 +43,11 @@ public class AppTest {
     public static void setUp() {
         WebDriverManager.chromedriver().setup();
         // Set the path for the WebDriver executable
-        driver = new ChromeDriver(new ChromeOptions().addArguments(List.of("--no-sandbox", "--disable-dev-shm-usage")));
+        ChromeOptions options = new ChromeOptions().addArguments(List.of("--no-sandbox", "--disable-dev-shm-usage"));
+        if (Boolean.getBoolean("headless")) {
+            options.addArguments("--headless");
+        }
+        driver = new ChromeDriver(options);
         driver.manage().window().setSize(new Dimension(1366, 720));
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
