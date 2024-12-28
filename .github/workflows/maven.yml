@@ -31,7 +31,7 @@ jobs:
     - name: Set up Chrome 
       uses: browser-actions/setup-chrome@latest 
       with: 
-        chrome-version: 'latest' 
+        chrome-version: 120
         install-chromedriver: true
         
     - name: Runs Selenuim Test
