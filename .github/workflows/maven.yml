@@ -35,7 +35,7 @@ jobs:
         install-chromedriver: true
         
     - name: Runs Selenuim Test
-      run: mvn clean test -DargLine="-Dwebdriver.chrome.driver=${{ steps.setup-chrome.outputs.chrome-path }}"
+      run: mvn clean test -DargLine="-Dwebdriver.chrome.driver=$CHROMEDRIVER_BIN"
       
     - name: Test Report
       uses: dorny/test-reporter@v1.9.1
