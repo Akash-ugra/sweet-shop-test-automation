@@ -44,7 +44,7 @@ public class AppTest {
         WebDriverManager.chromedriver().setup();
         // Set the path for the WebDriver executable
         ChromeOptions options = new ChromeOptions().addArguments(List.of("--no-sandbox", "--disable-dev-shm-usage"));
-        if (Boolean.getBoolean("headless")) {
+        if (Boolean.parseBoolean(System.getProperty("headless", "false"))) {
             options.addArguments("--headless");
         }
         driver = new ChromeDriver(options);
