@@ -40,9 +40,8 @@ public class AppTest {
      */
     @BeforeAll
     public static void setUp() {
-        WebDriverManager.chromedriver().setup();
         // Set the path for the WebDriver executable
-        driver = new ChromeDriver();
+        driver = WebDriverManager.chromedriver().create();
         driver.manage().window().setSize(new Dimension(1366, 720));
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
